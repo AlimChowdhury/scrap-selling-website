@@ -11,8 +11,7 @@
 
 <body>
 <!-- Start Main Top -->
-<div th:replace="fragments ::main-top">
-</div>
+<div th:replace="~{fragments ::main-top}"></div>
 <!-- End Main Top -->
 
 <!-- Start Main Top -->
@@ -73,9 +72,33 @@
                             <td class="total-pr" style="color: black">
                                 <span></span>[(${order.paymentMethod})]</span>
                             </td>
+
                             <td>
-                                <a th:href="@{/cancel-order/(id = ${order.id})}" class="button-cancel">Cancel</a>
+                                <a href="#" th:onclick="'cancelOrder(' + ${order.id} + '); return false;'" class="button-cancel">Cancel</a>
                             </td>
+
+                            <script th:inline="javascript">
+                                /*<![CDATA[*/
+                                function cancelOrder(orderId) {
+                                    var form = document.createElement('form');
+                                    form.method = 'POST';
+                                    form.action = /*[[@{/cancel-order}]]*/ '/cancel-order'; // Thymeleaf syntax for URL mapping
+
+                                    var input = document.createElement('input');
+                                    input.type = 'hidden';
+                                    input.name = 'id';
+                                    input.value = orderId;
+
+                                    form.appendChild(input);
+
+                                    document.body.appendChild(form);
+                                    form.submit();
+                                }
+                                /*]]>*/
+                            </script>
+
+
+
                             </a>
                             </td>
                         </tr>

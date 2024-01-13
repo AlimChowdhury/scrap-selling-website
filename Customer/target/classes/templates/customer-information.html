@@ -91,9 +91,10 @@
                        th:placeholder="${customer.address != null} ? ${customer.address} : 'Enter your address'"
                        id="address" name="address">
             </div>
+
             <div class="inputDiv">
-                <label class="inputLabel" for="city">City *</label>
-                <select class="form-control" id="city" th:field="*{city}" name="country" required
+                <label class="inputLabel" for="city">Ward *</label>
+                <select class="form-control" id="city" th:field="*{ward}" name="country" required
                         th:each="country: ${countries}">
                     <option value="">-SELECT-</option>
                     <option th:each="city : ${cities}"
@@ -104,8 +105,8 @@
             </div>
 
             <div class="inputDiv">
-                <label class="inputLabel" for="country">Country *</label>
-                <select class="form-control" id="country" th:field="*{country}" name="country" required>
+                <label class="inputLabel" for="country">District *</label>
+                <select class="form-control" id="country" th:field="*{district}" name="country" required>
                     <option value="">-SELECT-</option>
                     <option th:each="country : ${countries}"
                             th:value="${country.id}"

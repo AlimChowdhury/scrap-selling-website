@@ -23,9 +23,9 @@ public class OrderController {
 
     private final ShoppingCartService cartService;
 
-    private final CountryService countryService;
+    private final DistrictService districtService;
 
-    private final CityService cityService;
+    private final WardService wardService;
 
     @GetMapping("/check-out")
     public String checkOut(Principal principal, Model model) {
@@ -33,13 +33,13 @@ public class OrderController {
             return "redirect:/login";
         } else {
             CustomerDto customer = customerService.getCustomer(principal.getName());
-            if (customer.getAddress() == null || customer.getCity() == null || customer.getPhoneNumber() == null) {
+            if (customer.getAddress() == null || customer.getWard() == null || customer.getPhoneNumber() == null) {
                 model.addAttribute("information", "You need update your information before check out");
-                List<Country> countryList = countryService.findAll();
-                List<City> cities = cityService.findAll();
+                List<District> districtList = districtService.findAll();
+                List<Ward> cities = wardService.findAll();
                 model.addAttribute("customer", customer);
                 model.addAttribute("cities", cities);
-                model.addAttribute("countries", countryList);
+                model.addAttribute("countries", districtList);
                 model.addAttribute("title", "Profile");
                 model.addAttribute("page", "Profile");
                 return "customer-information";
@@ -69,7 +69,7 @@ public class OrderController {
         }
     }
 
-    @RequestMapping(value = "/cancel-order", method = {RequestMethod.PUT, RequestMethod.GET})
+    @RequestMapping(value = "/cancel-order", method = {RequestMethod.PUT, RequestMethod.POST})
     public String cancelOrder(Long id, RedirectAttributes attributes) {
         orderService.cancelOrder(id);
         attributes.addFlashAttribute("success", "Cancel order successfully!");

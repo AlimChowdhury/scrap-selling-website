@@ -30,8 +30,8 @@ public class Customer {
 
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "name", referencedColumnName = "id")
-    private City city;
-    private String country;
+    private Ward ward;
+    private String district;
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "customer_role", joinColumns = @JoinColumn(name = "customer_id", referencedColumnName = "customer_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "role_id"))
@@ -44,7 +44,7 @@ public class Customer {
     private List<Order> orders;
 
     public Customer() {
-        this.country = "VN";
+        this.district = "VN";
         this.cart = new ShoppingCart();
         this.orders = new ArrayList<>();
     }
@@ -59,8 +59,8 @@ public class Customer {
                 ", password='" + password + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", address='" + address + '\'' +
-                ", city=" + city.getName() +
-                ", country='" + country + '\'' +
+                ", ward=" + ward.getName() +
+                ", district='" + district + '\'' +
                 ", roles=" + roles +
                 ", cart=" + cart.getId() +
                 ", orders=" + orders.size() +

@@ -1,6 +1,6 @@
 package com.ecommerce.library.dto;
 
-import com.ecommerce.library.model.City;
+import com.ecommerce.library.model.Ward;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,8 +24,8 @@ public class CustomerDto {
 
     private String address;
     private String confirmPassword;
-    private City city;
+    private Ward ward;
     private String image;
-    private String country;
+    private String district;
 
 }

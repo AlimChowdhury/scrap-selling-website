@@ -1,10 +1,10 @@
 package com.ecommerce.customer.controller;
 
 import com.ecommerce.library.dto.CustomerDto;
-import com.ecommerce.library.model.City;
-import com.ecommerce.library.model.Country;
-import com.ecommerce.library.service.CityService;
-import com.ecommerce.library.service.CountryService;
+import com.ecommerce.library.model.Ward;
+import com.ecommerce.library.model.District;
+import com.ecommerce.library.service.WardService;
+import com.ecommerce.library.service.DistrictService;
 import com.ecommerce.library.service.CustomerService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -25,9 +25,9 @@ import java.util.List;
     @RequiredArgsConstructor
     public class CustomerController {
         private final CustomerService customerService;
-        private final CountryService countryService;
+        private final DistrictService districtService;
         private final PasswordEncoder passwordEncoder;
-        private final CityService cityService;
+        private final WardService wardService;
 
         @GetMapping("/profile")
         public String profile(Model model, Principal principal) {
@@ -36,11 +36,11 @@ import java.util.List;
             }
             String username = principal.getName();
             CustomerDto customer = customerService.getCustomer(username);
-            List<Country> countryList = countryService.findAll();
-            List<City> cities = cityService.findAll();
+            List<District> districtList = districtService.findAll();
+            List<Ward> wards = wardService.findAll();
             model.addAttribute("customer", customer);
-            model.addAttribute("cities", cities);
-            model.addAttribute("countries", countryList);
+            model.addAttribute("wards", wards);
+            model.addAttribute("districts", districtList);
             model.addAttribute("title", "Profile");
             model.addAttribute("page", "Profile");
             return "customer-information";
@@ -58,10 +58,10 @@ import java.util.List;
             }
             String username = principal.getName();
             CustomerDto customer = customerService.getCustomer(username);
-            List<Country> countryList = countryService.findAll();
-            List<City> cities = cityService.findAll();
-            model.addAttribute("countries", countryList);
-            model.addAttribute("cities", cities);
+            List<District> districtList = districtService.findAll();
+            List<Ward> wards = wardService.findAll();
+            model.addAttribute("districts", districtList);
+            model.addAttribute("wards", wards);
             if (result.hasErrors()) {
                 return "customer-information";
             }

@@ -10,13 +10,13 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "cities")
-public class City {
+@Table(name = "wards")
+public class Ward {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "country_id", referencedColumnName = "country_id")
-    private Country country;
+    @JoinColumn(name = "district_id", referencedColumnName = "district_id")
+    private District district;
 }

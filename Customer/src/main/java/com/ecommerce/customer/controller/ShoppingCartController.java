@@ -30,7 +30,7 @@ public class ShoppingCartController {
         Customer customer = customerService.findByUsername(principal.getName());
         ShoppingCart cart = customer.getCart();
         if (cart == null) {
-            model.addAttribute("check");
+            model.addAttribute("check","No item");
 
         }
         if (cart != null) {

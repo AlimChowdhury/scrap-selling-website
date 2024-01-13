@@ -8,13 +8,13 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name = "country")
+@Table(name = "districts")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Country {
+public class District {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "country_id")
+    @Column(name ="district_id")
     private Long id;
     private String name;
 }

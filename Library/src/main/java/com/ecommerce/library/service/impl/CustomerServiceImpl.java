@@ -42,8 +42,8 @@ public class CustomerServiceImpl implements CustomerService {
         customerDto.setPassword(customer.getPassword());
         customerDto.setAddress(customer.getAddress());
         customerDto.setPhoneNumber(customer.getPhoneNumber());
-        customerDto.setCity(customer.getCity());
-        customerDto.setCountry(customer.getCountry());
+        customerDto.setWard(customer.getWard());
+        customerDto.setDistrict(customer.getDistrict());
         return customerDto;
     }
 
@@ -58,8 +58,8 @@ public class CustomerServiceImpl implements CustomerService {
     public Customer update(CustomerDto dto) {
         Customer customer = customerRepository.findByUsername(dto.getUsername());
         customer.setAddress(dto.getAddress());
-        customer.setCity(dto.getCity());
-        customer.setCountry(dto.getCountry());
+        customer.setWard(dto.getWard());
+        customer.setDistrict(dto.getDistrict());
         customer.setPhoneNumber(dto.getPhoneNumber());
         return customerRepository.save(customer);
     }
