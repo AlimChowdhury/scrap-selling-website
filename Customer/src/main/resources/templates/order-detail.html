@@ -60,7 +60,7 @@
                                 <p th:text="${orderdetail.product.name}"></p>
                             </td>
                             <td class="price-pr">
-                                <p th:text="'$' + ${orderdetail.product.costPrice}"></p>
+                                <p th:text="'BDT' + ${orderdetail.product.costPrice}"></p>
                             </td>
                         </tr>
                         </tbody>
@@ -71,10 +71,16 @@
                             <div class="order-box">
                                 <h3>Order summary</h3>
                                 <div class="d-flex">
-                                    <p>Total Quantity [(${order.quantity})]</p>
-                                    <h4>Sub Total</h4>
-                                    <div class="ml-auto font-weight-bold" th:text="${order.totalPrice}"> </div>
+                                    <div class="mb-2">
+                                        <h4>Total Quantity</h4>
+                                        <div class="font-weight-bold" th:text="${order.quantity}"></div>
+                                    </div>
+                                    <div class="ml-auto mb-2">
+                                        <h4>Sub Total</h4>
+                                        <div class="font-weight-bold" th:text="${order.totalPrice}"></div>
+                                    </div>
                                 </div>
+
                                 <hr class="my-1">
                             </div>
                         </div>

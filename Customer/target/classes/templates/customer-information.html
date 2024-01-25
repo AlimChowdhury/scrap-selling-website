@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Freshshop - Ecommerce Bootstrap 4 HTML Template</title>
+    <title>Profile</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -94,24 +94,17 @@
 
             <div class="inputDiv">
                 <label class="inputLabel" for="city">Ward *</label>
-                <select class="form-control" id="city" th:field="*{ward}" name="country" required
-                        th:each="country: ${countries}">
+                <select class="form-control" id="city" th:field="*{ward}" name="ward" required>
                     <option value="">-SELECT-</option>
-                    <option th:each="city : ${cities}"
-                            th:value="${city.id}"
-                            th:text="${city.name}">
-                    </option>
+                    <option th:each="ward : ${wards}" th:value="${ward.id}" th:text="${ward.name}"></option>
                 </select>
             </div>
 
             <div class="inputDiv">
                 <label class="inputLabel" for="country">District *</label>
-                <select class="form-control" id="country" th:field="*{district}" name="country" required>
+                <select class="form-control" id="country" th:field="*{district}" name="district" required>
                     <option value="">-SELECT-</option>
-                    <option th:each="country : ${countries}"
-                            th:value="${country.id}"
-                            th:text="${country.name}">
-                    </option>
+                    <option th:each="district : ${districts}" th:value="${district.id}" th:text="${district.name}"></option>
                 </select>
             </div>
 

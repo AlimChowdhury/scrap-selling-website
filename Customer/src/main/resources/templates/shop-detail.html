@@ -46,7 +46,7 @@
                             <div class="toolbar-sorter-right">
                                 <span>Sort by </span>
                                 <select id="basic" class="selectpicker show-tick form-control"
-                                        data-placeholder="$ USD" onchange="location = this.value;">
+                                        data-placeholder="BDT " onchange="location = this.value;">
                                     <option>--Select--</option>
                                     <option value="http://localhost:8020/shop/shop-detail">Normal</option>
                                     <option value="http://localhost:8020/shop/high-price">High Price → Low Price
@@ -96,7 +96,7 @@
                                                 </div>
                                                 <div class="why-text">
                                                     <h4 th:text="${product.name}"></h4>
-                                                    <h5 th:text="'$' + ${product.costPrice}"></h5>
+                                                    <h5 th:text="'BDT' + ${product.costPrice}"></h5>
                                                 </div>
                                             </div>
                                         </form>
@@ -119,7 +119,7 @@
                                             <div class="col-sm-6 col-md-6 col-lg-8 col-xl-8">
                                                 <div class="why-text full-width">
                                                     <h4 th:text="${productView.name}"></h4>
-                                                    <h5 th:text="'$' + ${productView.costPrice}"></h5>
+                                                    <h5 th:text="'BDT' + ${productView.costPrice}"></h5>
                                                     <p th:text="${productView.description}"></p>
                                                     <input type="hidden" th:value="${productView.id}" name="id"
                                                            class="form-control">

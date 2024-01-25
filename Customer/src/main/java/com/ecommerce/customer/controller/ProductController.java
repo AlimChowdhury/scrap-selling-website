@@ -25,7 +25,7 @@ public class ProductController {
     @GetMapping("/menu")
     public String menu(Model model) {
         model.addAttribute("page", "Products");
-        model.addAttribute("title", "Menu");
+        model.addAttribute("title", "Buy");
         List<Category> categories = categoryService.findAllByActivatedTrue();
         List<ProductDto> products = productService.products();
         model.addAttribute("products", products);

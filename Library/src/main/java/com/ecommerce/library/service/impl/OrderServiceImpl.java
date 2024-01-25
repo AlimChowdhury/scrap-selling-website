@@ -65,6 +65,7 @@ public class OrderServiceImpl implements OrderService {
         Order order = orderRepository.getById(id);
         order.setAccept(true);
         order.setDeliveryDate(new Date());
+        order.setOrderStatus("Accepted");
         return orderRepository.save(order);
     }
 

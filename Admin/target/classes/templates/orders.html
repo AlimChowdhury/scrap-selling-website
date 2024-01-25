@@ -29,6 +29,7 @@
                 <table class="table">
                     <thead>
                     <tr>
+                        <th>Name</th>
                         <th class="order-date">Order Date</th>
                         <th>Delivery Date</th>
                         <th class="price-pr">Order Status</th>
@@ -39,24 +40,35 @@
                     </thead>
                     <tbody>
                     <tr th:each="order : ${orders}">
+
+                        <td >
+                            <p th:text="${order.getCustomer()}"></p>
+                        </td>
+
                         <td class="order-date">
                             <span><b>[(${order.orderDate})]</b></span>
                         </td>
+
                         <td class="name-pr" th:if="${order.accept == true}">
                             <a href="#">
                                 [(${order.deliveryDate})]
                             </a>
                         </td>
+
                         <td class="price-pr">
                             <p th:text="${order.orderStatus}"></p>
                         </td>
+
                         <td class="quantity-box" th:text="${order.quantity}"></td>
+
                         <td class="total-pr">
-                            <p style="color: red">$ [(${order.totalPrice})]</p>
+                            <p style="color: red">BDT [(${order.totalPrice})]</p>
                         </td>
+
                         <td class="total-pr" style="color: black">
                             <span></span>[(${order.paymentMethod})]</span>
                         </td>
+
                         <td>
                             <a th:if="${order.accept} != false"  th:href="@{/cancel-order(id = ${order.id})}"
                                class="btn btn-primary">Cancel</a>

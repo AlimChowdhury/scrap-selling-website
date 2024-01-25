@@ -87,9 +87,9 @@
                                 <div class="media mb-2 border-bottom" th:each="item : ${shoppingCart.getCartItems()}">
                                     <div class="media-body"><a href="product-detail.html"
                                                                th:text="${item.product.name}"></a>
-                                        <div class="small text-muted">Price: [(${item.product.costPrice})]$ <span
+                                        <div class="small text-muted">Price: [(${item.unitPrice})] <span
                                                 class="mx-2">|</span> Qty: [(${item.quantity})]
-                                            <span class="mx-2">|</span> Subtotal: $ + [(${item.unitPrice *
+                                            <span class="mx-2">|</span> Subtotal: BDT  [(${item.unitPrice *
                                             item.quantity})]
                                         </div>
                                     </div>
@@ -117,8 +117,8 @@
                                 <div class="ml-auto font-weight-bold"> 2</div>
                             </div>
                             <div class="d-flex">
-                                <h4>Shipping Cost</h4>
-                                <div class="ml-auto font-weight-bold"> Free</div>
+                                <h4>Other Cost</h4>
+                                <div class="ml-auto font-weight-bold"> None</div>
                             </div>
                             <hr>
                             <div class="d-flex gr-total">

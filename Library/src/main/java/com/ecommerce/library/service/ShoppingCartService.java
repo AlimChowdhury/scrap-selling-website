@@ -7,6 +7,8 @@ import com.ecommerce.library.model.ShoppingCart;
 public interface ShoppingCartService {
     ShoppingCart addItemToCart(ProductDto productDto, int quantity, String username);
 
+    ShoppingCart addItemToCartSell(ProductDto productDto, int quantity, String username);
+
     ShoppingCart updateCart(ProductDto productDto, int quantity, String username);
 
     ShoppingCart removeItemFromCart(ProductDto productDto, String username);
