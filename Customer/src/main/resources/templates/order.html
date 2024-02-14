@@ -54,11 +54,11 @@
                         <tbody>
                         <tr th:each="order : ${orders}">
                             <td class="order-date">
-                                <span><b>[(${order.orderDate})]</b></span>
+                                <span><b>[(${#dates.format(order.orderDate, 'yyyy-MM-dd')})]</b></span>
                             </td>
                             <td class="name-pr" >
                                 <a th:if = "${order.accept != null}" href="#">
-                                    [(${order.deliveryDate})]
+                                    [(${#dates.format(order.deliveryDate, 'yyyy-MM-dd')})]
                                 </a>
                                 <a th:if = "${order.accept == null}"><p>Pending</p> </a>
                             </td>

@@ -30,6 +30,12 @@ public class OrderServiceImpl implements OrderService {
         order.setCustomer(shoppingCart.getCustomer());
         order.setTax(2);
         order.setTotalPrice(shoppingCart.getTotalPrice());
+
+        if(shoppingCart.getTotalPrice()<100)
+            order.setTax(5);
+        else
+            order.setTax(shoppingCart.getTotalPrice()/100*5);
+        
         order.setAccept(false);
         order.setPaymentMethod("Cash");
         order.setOrderStatus("Pending");
