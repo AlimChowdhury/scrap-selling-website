@@ -1,5 +1,5 @@
-# Ecommerce-website
-Project Name: Ecommerce-website
+# ScrapVault
+Project Name: ScrapVault
 
 # Technology Stack:
     Backend Framework: Spring Boot
