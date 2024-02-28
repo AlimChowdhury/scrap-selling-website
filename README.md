@@ -9,10 +9,10 @@ Project Name: ScrapVault
 # To run the application "ScrapVault", Please follow the following instruction. 
    1.Download Zip
    2.Open file using Intellij Idea
-   2.Setup MySQL database 
-   3.Add new database name
-   4.Change MySQL usrername and password according to your system 
-   5.Run project
+   3.Setup MySQL database 
+   4.Add new database name
+   5.Change MySQL usrername and password according to your system 
+   6.Run project
 
 # Modules:
 # Admin Module:
