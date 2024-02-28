@@ -6,6 +6,14 @@ Project Name: ScrapVault
     Database: MySQL
     Front-end: HTML, CSS, JS, Bootstrap
 
+# To run the application "ScrapVault", Please follow the following instruction. 
+   1.Download Zip
+   2.Open file using Intellij Idea
+   2.Setup MySQL database 
+   3.Add new database name
+   4.Change MySQL usrername and password according to your system 
+   5.Run project
+
 # Modules:
 # Admin Module:
         Designed for administrators to manage the e-commerce platform. It typically includes functionalities for product and user management, order processing, and analytics.
